@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "BuscaCEP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>BuscaCEP</h2>
+@model IPC.Correios.Web.Models.Endereco
+@using (Html.BeginForm("ConsultarCep", "Buscador", FormMethod.Get))
+{
+    <div>
+        <label>CEP:</label>
+        <input type="text"
+               name="cep"
+               required />
+        <button type="submit">Consultar</button>
+    </div>
+}
+<br />
+<div>
+    @if (Model != null)
+    {
+        <p>@Model.street</p>
+        <p>@Model.neighborhood</p>
+        <p>@Model.city/@Model.state</p>
+    }
+</div>

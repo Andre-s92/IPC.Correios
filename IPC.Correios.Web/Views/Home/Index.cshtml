@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Apresentação";
+}
+
+@*@section scripts{
+    <script type="text/javascript" src="@(Url.Content("~/Scripts/ipc.snowcomplete2.js"))"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#field").snowcomplete2({
+                remote: "/Controller/Action/?query=%QUERY",
+                placeholder: "Placeholder",
+                text: function (obj) {
+                    return "(" + obj.Sigla +")" + obj.Label;
+                },
+                item: function (obj) {
+                    return [
+                        "<span>" + obj.Label + "</span>",
+                        "<span> Na Listagem </span>",
+                        "<span >" + obj.Sigla + "</span>"
+                    ];
+                }
+            });
+        });
+    </script>
+}*@
+
+<div>
+    <h2>Bem vindo ao BuscadorCEP</h2>
+    <h3>O Aplicativo BuscadorCEP permite que voce encontre codigos de endereçamento postais(CEP).</h3>
+    <h3>Se vicê já tiver o CEP em mãos e gistaria de buscar seu endereço, o BuscadorCEP também vai te ajudar.</h3>
+    <h3>Aproveite! =D</h3>
+     <button onclick="window.location.href='@Url.Action("BuscaCEP", "Buscador")'">Buscar Endereço</button>
+
+</div>
+@*
+<form>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="field">Label</label>
+                        <input type="text" class="form-control" id="field" name="field" placeholder="Será substituido" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+*@
